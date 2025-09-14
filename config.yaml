@@ -1,0 +1,11 @@
+---
+terraform:
+  config_version: "1"
+
+  ssm_parameters:
+    - name: "/my-app/api-key"
+      description: "API key for a third-party service"
+      type: "SecureString"
+      value: "{{- var.api_key -}}"
+      tags:
+        project: "my-app"
