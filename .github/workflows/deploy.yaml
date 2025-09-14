@@ -5,6 +5,7 @@ on:
 
 jobs:
   deploy:
+    environment: dev
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -17,4 +18,4 @@ jobs:
           config-file: 'config.yaml'
 
           # Input for the custom action: the secret value
-          api-key: ${{ secrets.API_KEY }}
+          secrets: '{"api_key": "${{ secrets.API_KEY }}"}'
