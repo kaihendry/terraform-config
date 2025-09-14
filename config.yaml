@@ -2,8 +2,10 @@
 terraform:
   config_version: "1"
 
+  # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_parameter
   ssm_parameters:
     - name: "/my-app/api-key"
       description: "API key for a third-party service"
+      type: "String"
       tags:
         project: "my-app"
