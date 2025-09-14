@@ -25,3 +25,5 @@ jobs:
 
           # Input for the custom action: the secret value
           secrets: '{"api_key": "${{ secrets.API_KEY }}"}'
+
+          tf-api-token: ${{ secrets.TF_API_TOKEN }}
