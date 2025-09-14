@@ -5,6 +5,5 @@ terraform:
   ssm_parameters:
     - name: "/my-app/api-key"
       description: "API key for a third-party service"
-      type: "SecureString"
       tags:
         project: "my-app"
