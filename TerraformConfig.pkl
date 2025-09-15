@@ -11,6 +11,7 @@ class SsmParameter {
   /// Description of the parameter
   description: String?
 
+  /// https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_parameter
   /// Parameter type (String, StringList, or SecureString)
   type: "String"|"StringList"|"SecureString"
 

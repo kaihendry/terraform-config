@@ -7,7 +7,7 @@ terraform {
       ["my_app_api_key"] {
         name = "/my-app/api-key"
         description = "API key for a third-party service"
-        type = "String"
+        type = "SecureString"
         value = read("env:APIKEY")
         tags {
           ["project"] = "my-app"
