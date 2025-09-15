@@ -20,11 +20,15 @@ class SsmParameter {
   tags: Mapping<String, String>?
 }
 
+/// Resource configuration structure
+class Resource {
+  /// SSM parameters with arbitrary unique names
+  aws_ssm_parameter: Mapping<String, SsmParameter>
+}
+
 /// Terraform configuration structure
 class Terraform {
-
-  /// List of SSM parameters to create
-  ssm_parameters: Listing<SsmParameter>
+  resource: Resource
 }
 
 /// Root configuration
