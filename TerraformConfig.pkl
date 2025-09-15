@@ -1,0 +1,31 @@
+/// Schema for Terraform configuration
+module TerraformConfig
+
+terraform_version: String = "1"
+
+/// SSM Parameter configuration
+class SsmParameter {
+  /// Parameter name (must start with /)
+  name: String(this.startsWith("/"))
+
+  /// Description of the parameter
+  description: String?
+
+  /// Parameter type (String, StringList, or SecureString)
+  type: "String"|"StringList"|"SecureString"
+
+  value: String
+
+  /// Optional tags for the parameter
+  tags: Mapping<String, String>?
+}
+
+/// Terraform configuration structure
+class Terraform {
+
+  /// List of SSM parameters to create
+  ssm_parameters: Listing<SsmParameter>
+}
+
+/// Root configuration
+terraform: Terraform

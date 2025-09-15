@@ -1,0 +1,16 @@
+amends "TerraformConfig.pkl"
+terraform_version = "1"
+
+terraform {
+  ssm_parameters {
+    new {
+      name = "/my-app/api-key"
+      description = "API key for a third-party service"
+      type = "String"
+      value = read("env:APIKEY")
+      tags {
+        ["project"] = "my-app"
+      }
+    }
+  }
+}
