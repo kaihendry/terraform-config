@@ -29,7 +29,7 @@ class RequiredProvider {
 
 /// Cloud configuration for Terraform Cloud
 class CloudWorkspace {
-  name: String = "terraform-config-dev"
+  name: String = read("env:REPO_NAME") + "-" + read("env:TF_ENVIRONMENT")
 }
 
 class Cloud {
@@ -57,11 +57,12 @@ class Resource {
 /// Default tags for AWS provider
 class DefaultTags {
   tags: Mapping<String, String> = new Mapping {
-    ["Environment"] = "dev"
-    ["Repository"] = "terraform-config"
-    ["ManagedBy"] = "Terraform"
-    ["Owner"] = "kaihendry"
-    ["Workspace"] = "terraform-config-dev"
+    // Environment is driven by workflow input (passed via TF_ENVIRONMENT)
+    ["Environment"] = read("env:TF_ENVIRONMENT")
+    ["Repository"] = read("env:REPO_NAME")
+    ["ManagedBy"] = "GitHub Actions"
+    ["Owner"] = read("env:GITHUB_ACTOR")
+    ["Workspace"] = read("env:REPO_NAME") + "-" + read("env:TF_ENVIRONMENT")
   }
 }
 
