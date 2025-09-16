@@ -1,5 +1,4 @@
 amends "TerraformConfig.pkl"
-terraform_version = "1"
 
 terraform {
   resource {
