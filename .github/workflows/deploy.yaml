@@ -20,5 +20,5 @@ jobs:
         uses: kaihendry/actions/terraform@main # The custom action
         with:
           tf-api-token: ${{ secrets.TF_API_TOKEN }}
-          environment-variables: |
-              APIKEY=${{ secrets.API_KEY }}
+        env:
+          APIKEY: ${{ secrets.APIKEY }}
