@@ -16,12 +16,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - uses: pkl-community/setup-pkl@v0
-        with:
-          pkl-version: 0.28.2
-
-      - run: APIKEY="${{ secrets.API_KEY }}" pkl eval -f yaml config.pkl > config.yaml
-
       - name: Deploy infrastructure
         uses: kaihendry/actions/terraform@main # The custom action
         with:
