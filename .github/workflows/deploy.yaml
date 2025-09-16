@@ -21,4 +21,4 @@ jobs:
         with:
           tf-api-token: ${{ secrets.TF_API_TOKEN }}
           environment-variables: |
-              APIKEY=${{ secrets.APIKEY }}
+              APIKEY=${{ secrets.API_KEY }}
