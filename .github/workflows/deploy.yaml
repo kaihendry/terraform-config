@@ -19,6 +19,6 @@ jobs:
       - name: Deploy infrastructure
         uses: kaihendry/actions/terraform@main # The custom action
         with:
-          # Input for the custom action: path to the config file
-          config-file: 'config.yaml'
           tf-api-token: ${{ secrets.TF_API_TOKEN }}
+          environment-variables: |
+              APIKEY=${{ secrets.APIKEY }}
