@@ -1,4 +1,4 @@
-amends "TerraformConfig.pkl"
+amends "https://raw.githubusercontent.com/kaihendry/actions/refs/heads/main/terraform/TerraformConfig.pkl"
 
 terraform {
   resource {
