@@ -8,7 +8,7 @@ How do you provide product teams with a way to self-service infrastructure at sc
 
 [PKL](https://pkl-lang.org/index.html) -> [Terraform JSON](https://developer.hashicorp.com/terraform/language/syntax/json) -> Infrastructure
 
-This allows teams to write PKL configuration that maps to Terraform resources.
+This allows teams to write PKL configuration (with IDE support!) that maps to Terraform resources.
 
 The Github action [kaihendry/actions/terraform@main](https://github.com/kaihendry/actions/blob/main/terraform/action.yml):
 
